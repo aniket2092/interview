@@ -1,0 +1,17 @@
+To make a class immutable in Java, you need to follow these guidelines:
+
+1. Declare the class as `final`: By declaring the class as `final`, you ensure that it cannot be subclassed and its behavior cannot be modified.
+
+2. Make all fields private: Encapsulate all the fields of the class and declare them as private. This prevents direct access to the fields from outside the class.
+
+3. Don't provide any setter methods: Avoid providing any setter methods that modify the state of the object. Once the object is created, its state should remain constant.
+
+4. Initialize all fields in the constructor: Provide a constructor that initializes all the fields of the class. This ensures that the object is fully initialized upon creation.
+
+5. Don't provide any methods that modify the state: Ensure that all the methods in the class are read-only and do not modify the internal state of the object. If any methods need to return modified data, create new instances instead of modifying the existing object.
+
+6. Make defensive copies of mutable fields: If your class contains fields that are mutable (e.g., collections or arrays), make defensive copies of them in the constructor or getter methods to prevent external modification.
+
+7. Make sure the class is not extendable: If your class has any methods that can be overridden, declare the class as `final` or make the methods `final` to prevent any subclass from modifying the behavior.
+
+By following these guidelines, you can create an immutable class in Java. This ensures that the state of the object cannot be changed once it is created, making it thread-safe and avoiding unexpected modifications.
